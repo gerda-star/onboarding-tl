@@ -1,25 +1,18 @@
-import reportGenerator.ExcelReportAdapter;
-import reportGenerator.PDFReportAdapter;
-import reportGenerator.ReportGenerator;
-import reportGenerator.typeReport.ExcelReporter;
-import reportGenerator.typeReport.PDFReporter;
+import reportgenerator.ReportGenerator;
+import reportgenerator.adapterexcel.ExcelReportAdapter;
+import reportgenerator.adapterpdf.PDFReportAdapter;
 
 import java.util.Date;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        ReportGenerator reportGenerator =  selectFormat();
+        ReportGenerator reportGenerator = selectFormat();
         reportGenerator.generateReport("Report for: " + new Date().toString());
     }
 
     public static ReportGenerator selectFormat() {
-        Scanner in = new Scanner(System.in);
         System.out.println("Выбираем формат: PDF, XLS");
-        String format = in.nextLine().toLowerCase();
-        in.close();
-
+        String format = Reader.scan.nextLine().toLowerCase();
         return setGenerator(format);
     }
 

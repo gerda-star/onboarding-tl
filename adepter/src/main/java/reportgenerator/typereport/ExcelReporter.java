@@ -1,10 +1,9 @@
-package reportGenerator.typeReport;
+package reportgenerator.typereport;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.FileNotFoundException;
@@ -24,13 +23,13 @@ public class ExcelReporter {
         try {
             book.write(new FileOutputStream("report.xls"));
             book.close();
-            System.out.println( "Excel отчет сформирован");
+            System.out.println("Excel отчет сформирован");
         } catch (FileNotFoundException e) {
-            System.out.println( "no");
+            System.out.println("no");
             e.printStackTrace();
 
         } catch (IOException e) {
-            System.out.println( "no");
+            System.out.println("no");
             e.printStackTrace();
 
         }
